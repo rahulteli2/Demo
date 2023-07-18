@@ -34,7 +34,7 @@ export default function SignUpForm() {
             <label>Name</label>
           </div>
           <div className='row'>
-            <input type='text' className='form-control' name='name' onChange={onUpdateField} onFocus={onFocusFeild}/>
+            <input type='text' className='form-control' name='name' onChange={onUpdateField} onBlur={onFocusFeild}/>
           </div>
           {
             errors.name.dirty && errors.name.error ? <div className='row'>
@@ -47,7 +47,7 @@ export default function SignUpForm() {
             <label>Email</label>
           </div>
           <div className='row'>
-            <input type='text' className='form-control' name="email" onChange={onUpdateField} onFocus={onFocusFeild}/>
+            <input type='text' className='form-control' name="email" onChange={onUpdateField} onBlur={onFocusFeild}/>
           </div>
           {
             errors.email.dirty && errors.email.error ? <div className='row'>
@@ -60,7 +60,7 @@ export default function SignUpForm() {
             <label>Password</label>
           </div>
           <div className='row'>
-            <input type='password' className='form-control' name="password" onChange={onUpdateField} onFocus={onFocusFeild}/>
+            <input type='password' className='form-control' name="password" onChange={onUpdateField} onBlur={onFocusFeild}/>
           </div>
           {
             errors.password.dirty && errors.password.error ? <div className='row'>
@@ -73,7 +73,7 @@ export default function SignUpForm() {
             <label>Confirm Password</label>
           </div>
           <div className='row'>
-            <input type='password' className='form-control' name='cnfPassword' onChange={onUpdateField} onFocus={onFocusFeild}/>
+            <input type='password' className='form-control' name='cnfPassword' onChange={onUpdateField} onBlur={onFocusFeild}/>
           </div>
           {
             errors.cnfPassword.dirty && errors.cnfPassword.error ? <div className='row'>
