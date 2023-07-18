@@ -69,7 +69,7 @@ export const SignUpFormValidator = form =>{
         }
         if(nextErrors.cnfPassword.dirty && (Feild ? Feild === 'cnfPassword': true))
         {
-            let cnfPasswordMsg = confirmPasswordValidator(cnfPassword);
+            let cnfPasswordMsg = confirmPasswordValidator(cnfPassword,form);
             nextErrors.cnfPassword.error = !!cnfPasswordMsg;
             nextErrors.cnfPassword.msg = cnfPasswordMsg;
             if (!!cnfPasswordMsg) isValid = false;
