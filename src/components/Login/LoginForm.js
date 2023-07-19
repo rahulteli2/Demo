@@ -34,7 +34,7 @@ export default function LoginForm() {
   return (
       <div className="container">
         <h1 className="text-center">Distribution App</h1>
-        <form onSubmit={onSubmit} className="login">
+        <form onSubmit={onSubmit} className="login text-center">
           <div className="col">
             <label className="form-lable">Username</label>
             <input

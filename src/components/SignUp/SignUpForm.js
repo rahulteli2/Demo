@@ -1,13 +1,16 @@
 import React,{useState} from 'react'
 import { SignUpFormValidator } from './SignUpFormValidator';
+import { useNavigate,Link } from 'react-router-dom';
 
 export default function SignUpForm() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "", name: "", cnfPassword: "" });
   const saveData = (e) =>{
     e.preventDefault();
     const { isValid } = validateForm({ form, errors, forceTouchErrors: true });
     if (!isValid) return;
     alert("API is getting called.");
+    navigate('/home',{state: { id: form.name}});
   }
   const onUpdateField = (e) => {
     const field = e.target.name;
@@ -26,7 +29,7 @@ export default function SignUpForm() {
   };
   const { errors, validateForm, onFocusFeild } = SignUpFormValidator(form);
   return (
-    <div>
+    <div className='text-center'>
       <h1 className='text-center'>Sign Up</h1>
       <form className='login' onSubmit={saveData}>
         <div className='col'>
