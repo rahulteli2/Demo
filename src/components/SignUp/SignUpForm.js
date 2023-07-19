@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { SignUpFormValidator } from './SignUpFormValidator';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
