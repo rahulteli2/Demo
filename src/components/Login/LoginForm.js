@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { LoginFormValidator } from "./LoginFormValidator";
+import { useNavigate,Link } from 'react-router-dom';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
 
   const onUpdateField = (e) => {
@@ -27,11 +29,11 @@ export default function LoginForm() {
     const { isValid } = validateForm({ form, errors, forceTouchErrors: true });
     if (!isValid) return;
     alert("API is getting called.");
+    navigate('/home',{state: { id: form.email}});
   };
   return (
-    <>
       <div className="container">
-        <h1 className="">Distribution App</h1>
+        <h1 className="text-center">Distribution App</h1>
         <form onSubmit={onSubmit} className="login">
           <div className="col">
             <label className="form-lable">Username</label>
@@ -41,7 +43,7 @@ export default function LoginForm() {
               name="email"
               value={form.email}
               onChange={onUpdateField}
-              onFocus={onBlurField}
+              onBlur={onBlurField}
             />
             {errors.email.dirty && errors.email.error ? (
               <p className="error">{errors.email.msg}</p>
@@ -55,22 +57,23 @@ export default function LoginForm() {
               name="password"
               value={form.password}
               onChange={onUpdateField}
-              onFocus={onBlurField}
+              onBlur={onBlurField}
             />
             {errors.password.dirty && errors.password.error ? (
               <p className="error">{errors.password.msg}</p>
             ) : null}
           </div>
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-          <div className="container my-3">
-            <a href="/" className="p-3">
+          <div className="text-center">
+            <button className="btn btn-primary" type="submit">
+              Login
+            </button>
+          </div>
+          <div className="text-center my-3">
+            <Link to='/signUp' className="p-3">
               Sign up?
-            </a>
+            </Link>
           </div>
         </form>
       </div>
-    </>
   );
 }

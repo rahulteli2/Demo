@@ -27,7 +27,7 @@ export default function SignUpForm() {
   const { errors, validateForm, onFocusFeild } = SignUpFormValidator(form);
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1 className='text-center'>Sign Up</h1>
       <form className='login' onSubmit={saveData}>
         <div className='col'>
           <div className='row'>
@@ -81,7 +81,7 @@ export default function SignUpForm() {
             </div>:null
           }
         </div>
-        <div className='col my-3'>
+        <div className='text-center my-3'>
           <button type='submit' className='btn btn-primary'>Save</button>
         </div>
       </form>

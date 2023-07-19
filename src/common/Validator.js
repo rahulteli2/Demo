@@ -17,6 +17,10 @@ export const passwordValidator = (password) => {
     {
         return "Password must be atleast 8 characters."
     }
+    else if(!new RegExp(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/).test(password))
+    {
+        return "Password must contain 1 special character, 1 number."
+    }
     return "";
 }
 
@@ -38,7 +42,12 @@ export const confirmPasswordValidator = (cnfPassword,form) =>{
     }else if(cnfPassword.length<8)
     {
         return "Confirm Password must be atleast 8 characters.";
-    }else if(form.password !== cnfPassword)
+    }
+    else if(!new RegExp(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/).test(cnfPassword))
+    {
+        return "Password must contain 1 special character, 1 number."
+    }
+    else if(form.password !== cnfPassword)
     {
         return "Passwords do not match";
     }
