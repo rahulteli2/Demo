@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </nav>
       <div className="container">
-        <h3>{location.state.id.split(".")[0].toUpperCase()}</h3>
+        <h3>{location.state.id.split("@")[0].toUpperCase()}</h3>
         <div className="card" htmlStyle="width: 18rem;">
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
