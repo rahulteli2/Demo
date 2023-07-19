@@ -21,7 +21,7 @@ body {
   width: 500px;
   overflow: hidden;
   margin: auto;
-  margin: 20 0 0 450px;
+  /* margin: 20 0 0 450px; */
   padding: 30px;
   background: #23463f;
   border-radius: 15px;
