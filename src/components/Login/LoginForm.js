@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginFormValidator } from "./LoginFormValidator";
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -29,12 +29,13 @@ export default function LoginForm() {
     const { isValid } = validateForm({ form, errors, forceTouchErrors: true });
     if (!isValid) return;
     alert("API is getting called.");
-    navigate('/home',{state: { id: form.email}});
+    navigate("/home", { state: { id: form.email } });
   };
   return (
-      <div className="container">
-        <h1 className="text-center">Distribution App</h1>
-        <form onSubmit={onSubmit} className="login text-center">
+    <div className="container">
+      <h1 className="text-center">Distribution App</h1>
+      <div className="text-center">
+        <form onSubmit={onSubmit} className="login">
           <div className="col">
             <label className="form-lable">Username</label>
             <input
@@ -69,11 +70,12 @@ export default function LoginForm() {
             </button>
           </div>
           <div className="text-center my-3">
-            <Link to='/signUp' className="p-3">
+            <Link to="/signUp" className="p-3">
               Sign up?
             </Link>
           </div>
         </form>
       </div>
+    </div>
   );
 }
