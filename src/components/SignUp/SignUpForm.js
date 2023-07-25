@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SignUpFormValidator } from "./SignUpFormValidator";
 import { useNavigate } from "react-router-dom";
+import { IonButton, IonInput } from "@ionic/react";
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function SignUpForm() {
               <label>Name</label>
             </div>
             <div className="row">
-              <input
+              <IonInput
                 type="text"
                 className="form-control"
                 name="name"
@@ -62,7 +63,7 @@ export default function SignUpForm() {
               <label>Email</label>
             </div>
             <div className="row">
-              <input
+              <IonInput
                 type="text"
                 className="form-control"
                 name="email"
@@ -81,7 +82,7 @@ export default function SignUpForm() {
               <label>Password</label>
             </div>
             <div className="row">
-              <input
+              <IonInput
                 type="password"
                 className="form-control"
                 name="password"
@@ -100,7 +101,7 @@ export default function SignUpForm() {
               <label>Confirm Password</label>
             </div>
             <div className="row">
-              <input
+              <IonInput
                 type="password"
                 className="form-control"
                 name="cnfPassword"
@@ -115,9 +116,10 @@ export default function SignUpForm() {
             ) : null}
           </div>
           <div className="text-center my-3">
-            <button type="submit" className="btn btn-primary">
+          <IonButton type="submit">Save</IonButton>
+            {/* <button type="submit" className="btn btn-primary">
               Save
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

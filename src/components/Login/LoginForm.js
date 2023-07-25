@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LoginFormValidator } from "./LoginFormValidator";
 import { useNavigate, Link } from "react-router-dom";
+import { IonButton, IonInput } from "@ionic/react";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function LoginForm() {
         <form onSubmit={onSubmit} className="login">
           <div className="col">
             <label className="form-lable">Username</label>
-            <input
+            <IonInput
               type="text"
               className="form-control"
               name="email"
@@ -52,7 +53,7 @@ export default function LoginForm() {
           </div>
           <div className="col my-3">
             <label className="form-lable">Password</label>
-            <input
+            <IonInput
               type="password"
               className="form-control"
               name="password"
@@ -65,9 +66,10 @@ export default function LoginForm() {
             ) : null}
           </div>
           <div className="text-center">
-            <button className="btn btn-primary" type="submit">
+            <IonButton type="submit">Login</IonButton>
+            {/* <button className="btn btn-primary" type="submit">
               Login
-            </button>
+            </button> */}
           </div>
           <div className="text-center my-3">
             <Link to="/signUp" className="p-3">
